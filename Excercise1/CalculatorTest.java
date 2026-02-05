@@ -23,9 +23,7 @@ public class CalculatorTest {
     
     @Test
     public void testDivide() {
-        // Complete this assertion to test that 5 divided by 2 equals 2.5
-        // Your code here:
-        
+        assertEquals(10.0, calculator.divide(20, 2), 0.001);
     }
     
     @Test(expected = ArithmeticException.class)
