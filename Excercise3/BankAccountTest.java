@@ -17,4 +17,11 @@ public class BankAccountTest {
         assertEquals(100.0, account.getBalance(), 0.001);
     }
 
+    @Test
+    public void testWithdrawDecreasesBalance() {
+        BankAccount account = new BankAccount(50.0);
+        account.withdraw(30.0);
+        assertEquals(20.0, account.getBalance(), 0.001);
+    }
+
 }
