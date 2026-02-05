@@ -24,4 +24,16 @@ public class BankAccountTest {
         assertEquals(20.0, account.getBalance(), 0.001);
     }
 
+    @Test
+    public void testPreventOverdraft() {
+        BankAccount account = new BankAccount(30.0);
+        
+        try{
+            account.withdraw(50.0);
+            fail("Expected an error for overdraft");
+        } catch (IllegalArgumentException e) {
+        }
+        assertEquals(30.0, account.getBalance(), 0.001);
+    }
+
 }
