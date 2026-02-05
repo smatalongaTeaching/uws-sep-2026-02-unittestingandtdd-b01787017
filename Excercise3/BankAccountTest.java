@@ -9,5 +9,12 @@ public class BankAccountTest {
         BankAccount account = new BankAccount();
         assertEquals(0.0, account.getBalance(), 0.001);
     }
+    
+    @Test
+    public void testDepositIncreasesBalance() {
+        BankAccount account = new BankAccount();
+        account.deposit(100.0);
+        assertEquals(100.0, account.getBalance(), 0.001);
+    }
 
 }
